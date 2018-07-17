@@ -1,11 +1,7 @@
-import requests
 import json
 import sys
 
-#print(f'This is script name: {sys.argv[0]}' )
-#print(f'args: {sys.argv[1]}' )
-
-#text = input('text> ')
+import requests
 
 data = {
     'MachineName': 'Jeffs Enigma',
@@ -15,7 +11,7 @@ data = {
         'Setting':'f'
     },
     'Rotor2':{
-        'RotorNum':'2',
+        'RotorNum':'4',
         'Setting':'d'
     },
     'Rotor3':{
@@ -23,7 +19,7 @@ data = {
         'Setting':'z'
     },
     'Plugboard': {
-        'Wiring': {'a':'h', 'r':'t', 's':'e', 'w':'f', 'c':'p', 'i':'b',}
+        'Wiring': {'a':'h', 'r':'t', 's':'e', 'w':'f', 'c':'p', 'i':'b'}
     }
 }
 
@@ -33,8 +29,6 @@ if sys.argv[1] == 'azure':
 else:
     url = 'http://localhost:61467/'
 
-#url = 'http://localhost:61467/'
-azureUrl = 'https://enigmamachinerestapi.azurewebsites.net/'
 endpoint = 'api/Enigma/Encrypt?leaveWhiteSpace=true'
 response = requests.post(url + endpoint, json=data)
 
