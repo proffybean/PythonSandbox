@@ -29,7 +29,7 @@ if sys.argv[1] == 'azure':
 else:
     url = 'http://localhost:61467/'
 
-endpoint = 'api/Enigma/Encrypt?leaveWhiteSpace=true'
+endpoint = 'api/Enigma/Encrypt?leaveWhiteSpace=false'
 response = requests.post(url + endpoint, json=data)
 
 #print(f'http status: {response.status_code}')
